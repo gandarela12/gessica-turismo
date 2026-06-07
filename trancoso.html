@@ -1,42 +1,59 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Define a codificação de caracteres como UTF-8 (suporta acentos e caracteres especiais) -->
   <meta charset="UTF-8">
+  <!-- Configura a viewport para dispositivos móveis (responsividade) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título da página exibido na aba do navegador -->
   <title>Gessica Turismo - Trancoso</title>
+  <!-- Importa a folha de estilos principal (mesma do index.html) -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ===================== CABEÇALHO (HEADER) ===================== -->
+  <!-- Mesmo cabeçalho do index.html, com "PASSEIOS" como link ativo -->
   <header class="header">
+
+    <!-- Logo clicável que leva para a página inicial -->
     <a href="index.html" class="logo">
       <img src="images/logo.png" alt="Gessica Turismo">
     </a>
+
+    <!-- Botão hambúrguer (visível apenas no mobile via CSS) -->
     <button class="menu-toggle" aria-label="Abrir menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
+
+    <!-- Menu de navegação - os links apontam para o index.html com âncoras -->
     <nav>
       <a href="index.html">INICIO</a>
       <a href="index.html#sobre">SOBRE NÓS</a>
-      <a href="index.html#passeios" class="active">PASSEIOS</a>
+      <a href="index.html#passeios" class="active">PASSEIOS</a>  <!-- Página ativa: passeios -->
       <a href="#contato">CONTATO</a>
     </nav>
   </header>
 
-  <!-- HERO IMAGE -->
+  <!-- ===================== IMAGEM PRINCIPAL DO PASSEIO ===================== -->
+  <!-- Foto grande de Trancoso no topo da página, centralizada com largura máxima de 887px -->
   <div class="passeio-hero">
-    <img src="images/trancoso-detail.jpg" alt="Trancoso">
+    <img src="images/trancoso-detail.jpg" alt="Trancoso - Quadrado Histórico">
   </div>
 
-  <!-- DETAIL CONTENT -->
+  <!-- ===================== CONTEÚDO DE DETALHE DO PASSEIO ===================== -->
+  <!-- Fundo amarelo claro com informações completas sobre o passeio -->
   <section class="passeio-detail">
     <div class="passeio-detail-content">
+
+      <!-- Título do passeio em rosa -->
       <h2>Trancoso</h2>
+      <!-- Subtítulo em cinza -->
       <h3>O tempo não passou por aqui!</h3>
 
+      <!-- Parágrafos descrevendo o passeio -->
       <p>Tudo segue devagar. No Quadrado, cercado por suas casinhas coloridas, temos na Igrejinha de São João Batista a escolha de muitos casais para seus casamentos. Toda branquinha e singela, está sempre aberta para os visitantes. E diz a tradição, que aquela que der 7 voltas em torno do mastro a frente da igreja, encontra o marido!</p>
 
       <p>Vários artesãos locais expõem no Quadrado o seu trabalho.</p>
@@ -48,8 +65,10 @@
       <p>No retorno para Porto Seguro vamos fazer uma parada na deliciosa Fábrica de Chocolates.</p>
       <p>Temos muitas histórias para lhe contar…</p>
 
+      <!-- Subseção "Descrição" com informações práticas -->
       <h2 class="section-title">Descrição</h2>
 
+      <!-- O que está incluso no passeio -->
       <p class="bold-label">Incluso:</p>
       <ul>
         <li>Guia de turismo</li>
@@ -57,6 +76,7 @@
       </ul>
       <p>Duração: Dia todo</p>
 
+      <!-- Dicas úteis para o turista -->
       <p class="bold-label">Dicas:</p>
       <ul>
         <li>Leve roupa de banho</li>
@@ -68,11 +88,14 @@
     </div>
   </section>
 
-  <!-- ORÇAMENTO -->
+  <!-- ===================== SEÇÃO ORÇAMENTO (FORMULÁRIO) ===================== -->
+  <!-- Mesmo formulário do index.html, com "Trancoso" pré-selecionado no dropdown -->
   <section class="orcamento" id="orcamento">
     <h2>FAÇA JÁ SEU ORÇAMENTO</h2>
 
     <form id="orcamento-form">
+
+      <!-- Dados pessoais: Nome e Telefone lado a lado -->
       <h3>Dados pessoais</h3>
       <div class="form-row">
         <div class="form-group">
@@ -85,13 +108,16 @@
         </div>
       </div>
 
+      <!-- Segunda linha: Seleção de passeio e Datas -->
       <div class="form-row">
+
+        <!-- Coluna esquerda: dropdown com "Trancoso" já selecionado -->
         <div class="form-group">
           <h3>Qual passeio deseja realizar?</h3>
           <select id="passeio-select" name="passeio">
             <option value="">Recife de Fora</option>
             <option value="arraial">Arraial D'ajuda</option>
-            <option value="trancoso" selected>Trancoso</option>
+            <option value="trancoso" selected>Trancoso</option>  <!-- Pré-selecionado nesta página -->
             <option value="praia-espelho">Praia do Espelho</option>
             <option value="caraiva">Caraíva</option>
             <option value="coroa-vermelha">Coroa Vermelha</option>
@@ -104,12 +130,17 @@
             <option value="eco-parque">Eco Parque</option>
           </select>
         </div>
+
+        <!-- Coluna direita: campos de datas, adultos e crianças -->
         <div class="form-group">
           <h3>Datas</h3>
+          <!-- Campo de data de ida -->
           <label for="ida">Ida</label>
           <input type="date" id="ida" name="ida">
+          <!-- Campo de data de volta -->
           <label for="volta" style="margin-top: 12px;">Volta</label>
           <input type="date" id="volta" name="volta">
+          <!-- Campos de Adulto e Criança lado a lado -->
           <div class="form-row" style="margin-top: 12px; margin-bottom: 0;">
             <div class="form-group form-group-half">
               <label for="adulto">Adulto</label>
@@ -135,22 +166,29 @@
         </div>
       </div>
 
+      <!-- Campo de observações -->
       <h3>Observações</h3>
       <div class="form-group">
         <textarea id="observacoes" name="observacoes" placeholder="Deixe aqui suas observações"></textarea>
       </div>
 
+      <!-- Botão de envio (envia via WhatsApp pelo JS) -->
       <button type="submit" class="btn-pink-sm">Enviar</button>
     </form>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===================== RODAPÉ (FOOTER) ===================== -->
+  <!-- Mesmo rodapé do index.html - links apontam para o index.html com âncoras -->
   <footer class="footer" id="contato">
     <div class="footer-content">
+
+      <!-- Coluna 1: Informações de contato -->
       <div class="footer-section">
         <h4>Contato</h4>
         <p>(73) 9 8147-3188 <img src="images/whatsapp.svg" alt="WhatsApp" style="width: 10px; height: 10px; vertical-align: middle; margin-left: 4px;"></p>
       </div>
+
+      <!-- Coluna 2: Links de redes sociais -->
       <div class="footer-section">
         <h4>Siga-nos</h4>
         <div class="footer-social">
@@ -158,6 +196,8 @@
           <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
         </div>
       </div>
+
+      <!-- Coluna 3: Links internos do site (apontam para o index.html) -->
       <div class="footer-section footer-sitemap">
         <h4>Mapa do Site</h4>
         <a href="index.html">Inicio</a>
@@ -166,11 +206,14 @@
         <a href="#contato">Contato</a>
       </div>
     </div>
+
+    <!-- Créditos do desenvolvedor -->
     <div class="footer-bottom">
       Desenvolvido por - Siteindev
     </div>
   </footer>
 
+  <!-- Importa o JavaScript principal (menu hambúrguer, formulário WhatsApp, scroll suave) -->
   <script src="script.js"></script>
 </body>
 </html>

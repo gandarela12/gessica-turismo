@@ -1,27 +1,39 @@
+/* ============================================================
+   GESSICA TURISMO - FOLHA DE ESTILOS PRINCIPAL
+   Fonte: Inika (Google Fonts) | Cores: rosa (#ff69b4), amarelo (#fffae0), branco (#fffef9)
+   ============================================================ */
+
+/* Importa a fonte Inika do Google Fonts (pesos 400 e 700) */
 @import url('https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap');
 
+/* ============ RESET GLOBAL ============ */
+/* Remove margens e paddings padrão do navegador e usa border-box para facilitar o dimensionamento */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Define a fonte padrão do site, cor do texto e fundo branco */
 body {
   font-family: 'Inika', serif;
   color: #000;
   background: #fff;
 }
 
+/* Remove sublinhado dos links e herda a cor do pai */
 a {
   text-decoration: none;
   color: inherit;
 }
 
+/* Remove os marcadores padrão das listas */
 ul {
   list-style: none;
 }
 
-/* ============ HEADER / NAV ============ */
+/* ============ HEADER / NAVEGACAO ============ */
+/* Cabeçalho com logo à esquerda e menu à direita, largura máxima de 1440px (igual ao Figma) */
 .header {
   display: flex;
   align-items: center;
@@ -31,16 +43,19 @@ ul {
   margin: 0 auto;
 }
 
+/* Tamanho da imagem do logotipo */
 .header .logo img {
   height: 53px;
   width: auto;
 }
 
+/* Links de navegação dispostos em linha com espaçamento de 30px */
 .header nav {
   display: flex;
   gap: 30px;
 }
 
+/* Estilo de cada link do menu: cor rosa, transição suave ao passar o mouse */
 .header nav a {
   font-size: 14px;
   color: #ff69b4;
@@ -48,6 +63,7 @@ ul {
   position: relative;
 }
 
+/* Sublinhado rosa abaixo do link da página ativa */
 .header nav a.active::after {
   content: '';
   position: absolute;
@@ -58,11 +74,13 @@ ul {
   background: #ff69b4;
 }
 
+/* Efeito de hover: reduz opacidade ao passar o mouse */
 .header nav a:hover {
   opacity: 0.7;
 }
 
-/* ============ BANNER ============ */
+/* ============ BANNER PRINCIPAL ============ */
+/* Container do banner com imagem de fundo que ocupa toda a largura */
 .banner {
   position: relative;
   width: 100%;
@@ -70,15 +88,17 @@ ul {
   overflow: hidden;
 }
 
+/* Imagem do banner ocupa todo o espaço e é recortada para preencher */
 .banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* Camada sobreposta ao banner com texto e botão centralizados */
 .banner-overlay {
   position: absolute;
-  inset: 0;
+  inset: 0; /* equivale a top:0, right:0, bottom:0, left:0 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -86,6 +106,7 @@ ul {
   gap: 30px;
 }
 
+/* Título principal do banner: grande, branco com sombra */
 .banner-overlay h1 {
   font-size: 62px;
   line-height: 62px;
@@ -96,6 +117,8 @@ ul {
   opacity: 0.58;
 }
 
+/* ============ BOTOES ============ */
+/* Botão grande rosa (usado no banner "Reserve aqui") */
 .btn-pink {
   display: inline-block;
   background: #ff69b4;
@@ -110,14 +133,17 @@ ul {
   transition: 0.3s;
 }
 
+/* Efeito hover: brilho rosa ao redor do botão */
 .btn-pink:hover {
   box-shadow: 0px 0px 4px 0px #ff69b4;
 }
 
+/* Efeito ao clicar: cor rosa mais escura */
 .btn-pink:active {
   background: #e2579d;
 }
 
+/* Botão pequeno rosa (usado nos cards "Saiba mais" e "Enviar") */
 .btn-pink-sm {
   display: inline-block;
   background: #ff69b4;
@@ -131,15 +157,18 @@ ul {
   transition: 0.3s;
 }
 
+/* Efeito hover do botão pequeno */
 .btn-pink-sm:hover {
   box-shadow: 0px 0px 4px 0px #ff69b4;
 }
 
+/* Efeito ao clicar do botão pequeno */
 .btn-pink-sm:active {
   background: #e2579d;
 }
 
-/* ============ SOBRE NOS ============ */
+/* ============ SECAO SOBRE NOS ============ */
+/* Layout flexível: texto à esquerda e imagem à direita, com espaçamento de 60px */
 .sobre-nos {
   display: flex;
   align-items: flex-start;
@@ -149,10 +178,12 @@ ul {
   padding: 60px 60px;
 }
 
+/* O texto ocupa o espaço restante ao lado da imagem */
 .sobre-nos-text {
   flex: 1;
 }
 
+/* Título "SOBRE NÓS" em rosa */
 .sobre-nos-text h2 {
   font-size: 42px;
   color: #ff69b4;
@@ -160,6 +191,7 @@ ul {
   margin-bottom: 10px;
 }
 
+/* Subtítulo em cinza */
 .sobre-nos-text h3 {
   font-size: 24px;
   color: #707070;
@@ -168,6 +200,7 @@ ul {
   line-height: 1.3;
 }
 
+/* Parágrafos de texto da seção */
 .sobre-nos-text p {
   font-size: 16px;
   line-height: 22px;
@@ -175,22 +208,26 @@ ul {
   margin-bottom: 12px;
 }
 
+/* A imagem não encolhe quando o espaço diminui */
 .sobre-nos-image {
   flex-shrink: 0;
 }
 
+/* Imagem quadrada de 456x456px (conforme Figma) */
 .sobre-nos-image img {
   width: 456px;
   height: 456px;
   object-fit: cover;
 }
 
-/* ============ PASSEIOS ============ */
+/* ============ SECAO PASSEIOS ============ */
+/* Fundo amarelo claro da seção de passeios */
 .passeios {
   background: #fffae0;
   padding: 60px 0 80px;
 }
 
+/* Título "OS MELHORES PASSEIOS" centralizado em rosa */
 .passeios h2 {
   font-size: 42px;
   color: #ff69b4;
@@ -199,6 +236,7 @@ ul {
   margin-bottom: 50px;
 }
 
+/* Grade de 4 colunas para os cards de passeios, centralizada */
 .passeios-grid {
   display: grid;
   grid-template-columns: repeat(4, 251px);
@@ -209,12 +247,14 @@ ul {
   padding: 0 40px;
 }
 
+/* Cada card de passeio empilha seus elementos verticalmente */
 .passeio-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* Imagem do card com tamanho fixo de 251x181px */
 .passeio-card img {
   width: 251px;
   height: 181px;
@@ -222,6 +262,7 @@ ul {
   border-radius: 0;
 }
 
+/* Nome do passeio abaixo da imagem */
 .passeio-card h3 {
   font-size: 24px;
   color: #000;
@@ -230,6 +271,7 @@ ul {
   text-align: center;
 }
 
+/* Descrição breve do passeio */
 .passeio-card p {
   font-size: 14px;
   line-height: 18px;
@@ -239,17 +281,20 @@ ul {
   width: 217px;
 }
 
+/* Espaçamento do botão "Saiba mais" dentro do card */
 .passeio-card .btn-pink-sm {
   margin-top: 16px;
 }
 
-/* ============ ORCAMENTO ============ */
+/* ============ SECAO ORCAMENTO (FORMULARIO) ============ */
+/* Container do formulário centralizado */
 .orcamento {
   max-width: 1200px;
   margin: 0 auto;
   padding: 60px 60px 80px;
 }
 
+/* Título "FAÇA JÁ SEU ORÇAMENTO" em rosa */
 .orcamento h2 {
   font-size: 36px;
   color: #ff69b4;
@@ -258,6 +303,7 @@ ul {
   margin-bottom: 30px;
 }
 
+/* Subtítulos do formulário (Dados pessoais, Datas, Observações) */
 .orcamento h3 {
   font-size: 24px;
   color: #000;
@@ -265,24 +311,28 @@ ul {
   margin-bottom: 12px;
 }
 
+/* Linha do formulário com dois campos lado a lado */
 .form-row {
   display: flex;
   gap: 40px;
   margin-bottom: 20px;
 }
 
+/* Grupo de campo: label + input empilhados, ocupa espaço igual */
 .form-group {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
+/* Rótulo (label) de cada campo */
 .form-group label {
   font-size: 16px;
   color: #000;
   margin-bottom: 6px;
 }
 
+/* Estilo padrão dos campos de entrada: fundo cinza claro, bordas arredondadas */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -297,6 +347,7 @@ ul {
   height: 32px;
 }
 
+/* Área de texto para observações: mais alta, sem redimensionamento */
 .form-group textarea {
   height: 96px;
   border-radius: 20px;
@@ -304,12 +355,14 @@ ul {
   padding: 12px 16px;
 }
 
+/* Cor do placeholder do textarea */
 .form-group textarea::placeholder {
   color: #9d9d9d;
 }
 
+/* Selects customizados com ícone de seta (chevron) à direita */
 .form-group select {
-  appearance: none;
+  appearance: none;              /* Remove a seta padrão do navegador */
   -webkit-appearance: none;
   background-image: url('images/chevron-down.svg');
   background-repeat: no-repeat;
@@ -319,6 +372,7 @@ ul {
   color: #9d9d9d;
 }
 
+/* Campos de data customizados com ícone de calendário à direita */
 .form-group input[type="date"] {
   appearance: none;
   -webkit-appearance: none;
@@ -330,21 +384,25 @@ ul {
   color: #000;
 }
 
+/* Campos de meia largura (Adulto e Criança ficam lado a lado) */
 .form-group-half {
   flex: 0.47;
 }
 
+/* Espaçamento do botão Enviar */
 .orcamento .btn-pink-sm {
   margin-top: 20px;
 }
 
-/* ============ FOOTER ============ */
+/* ============ RODAPE (FOOTER) ============ */
+/* Fundo rosa do rodapé com texto branco */
 .footer {
   background: #ff69b4;
   padding: 30px 60px 20px;
   color: #fffef9;
 }
 
+/* Conteúdo do rodapé: 3 seções lado a lado (Contato, Siga-nos, Mapa do Site) */
 .footer-content {
   display: flex;
   justify-content: center;
@@ -353,12 +411,14 @@ ul {
   margin: 0 auto;
 }
 
+/* Títulos das seções do rodapé */
 .footer-section h4 {
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 8px;
 }
 
+/* Textos e links do rodapé */
 .footer-section p,
 .footer-section a {
   font-size: 14px;
@@ -367,10 +427,12 @@ ul {
   display: block;
 }
 
+/* Efeito hover nos links do rodapé */
 .footer-section a:hover {
   opacity: 0.8;
 }
 
+/* Ícones de redes sociais lado a lado */
 .footer-social {
   display: flex;
   align-items: center;
@@ -378,21 +440,25 @@ ul {
   margin-top: 4px;
 }
 
+/* Tamanho dos ícones de redes sociais */
 .footer-social img {
   width: 22px;
   height: 22px;
 }
 
+/* Ícone do WhatsApp é menor que os demais */
 .footer-social .whatsapp-icon {
   width: 10px;
   height: 10px;
 }
 
+/* Links do mapa do site empilhados */
 .footer-sitemap a {
   display: block;
   margin-bottom: 0;
 }
 
+/* Texto "Desenvolvido por" centralizado no fundo do rodapé */
 .footer-bottom {
   text-align: center;
   margin-top: 40px;
@@ -400,29 +466,34 @@ ul {
   color: #fffef9;
 }
 
-/* ============ PAGINA TRANCOSO (detalhe) ============ */
+/* ============ PAGINA DE DETALHE DO PASSEIO (TRANCOSO) ============ */
+/* Imagem principal do passeio, centralizada com largura máxima de 887px */
 .passeio-hero {
   max-width: 887px;
   margin: 30px auto 0;
 }
 
+/* Imagem hero com altura fixa e recorte para preencher */
 .passeio-hero img {
   width: 100%;
   height: 404px;
   object-fit: cover;
 }
 
+/* Área de detalhes do passeio com fundo amarelo claro */
 .passeio-detail {
   background: #fffae0;
   padding: 40px 0 60px;
 }
 
+/* Container do conteúdo textual da página de detalhe */
 .passeio-detail-content {
   max-width: 887px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/* Título do passeio (ex: "Trancoso") em rosa */
 .passeio-detail-content h2 {
   font-size: 42px;
   color: #ff69b4;
@@ -430,6 +501,7 @@ ul {
   margin-bottom: 10px;
 }
 
+/* Subtítulo do passeio (ex: "O tempo não passou por aqui!") em cinza */
 .passeio-detail-content h3 {
   font-size: 24px;
   color: #707070;
@@ -437,6 +509,7 @@ ul {
   margin-bottom: 20px;
 }
 
+/* Parágrafos de texto da descrição */
 .passeio-detail-content p {
   font-size: 14px;
   line-height: 22px;
@@ -444,6 +517,7 @@ ul {
   margin-bottom: 12px;
 }
 
+/* Título de seção dentro da página de detalhe (ex: "Descrição") */
 .passeio-detail-content .section-title {
   font-size: 42px;
   color: #ff69b4;
@@ -452,6 +526,7 @@ ul {
   margin-bottom: 10px;
 }
 
+/* Rótulos em negrito (ex: "Incluso:", "Dicas:") */
 .passeio-detail-content .bold-label {
   font-size: 16px;
   font-weight: 700;
@@ -459,21 +534,28 @@ ul {
   margin-top: 16px;
 }
 
+/* Listas com marcadores (incluso, dicas) */
 .passeio-detail-content ul {
   list-style: disc;
   padding-left: 24px;
   margin-bottom: 10px;
 }
 
+/* Itens das listas */
 .passeio-detail-content ul li {
   font-size: 14px;
   line-height: 22px;
   color: #000;
 }
 
-/* ============ HAMBURGER MENU (hidden on desktop) ============ */
+/* ============================================================
+   MENU HAMBURGER (VISIVEL APENAS NO MOBILE)
+   No desktop o botão fica escondido (display: none)
+   ============================================================ */
+
+/* Botão hambúrguer: 3 barras empilhadas */
 .menu-toggle {
-  display: none;
+  display: none;              /* Escondido no desktop */
   flex-direction: column;
   justify-content: center;
   gap: 5px;
@@ -481,106 +563,131 @@ ul {
   border: none;
   cursor: pointer;
   padding: 4px;
-  z-index: 1001;
+  z-index: 1001;              /* Fica acima do menu aberto */
 }
 
+/* Cada barra do hambúrguer */
 .menu-toggle span {
   display: block;
   width: 28px;
   height: 3px;
   background: #ff69b4;
   border-radius: 2px;
-  transition: 0.3s;
+  transition: 0.3s;           /* Animação suave ao abrir/fechar */
 }
 
+/* Quando o menu está aberto, a 1ª barra gira 45° formando um X */
 .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 6px);
 }
 
+/* A barra do meio desaparece */
 .menu-toggle.active span:nth-child(2) {
   opacity: 0;
 }
 
+/* A 3ª barra gira -45° completando o X */
 .menu-toggle.active span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* ============ RESPONSIVE - TABLET (max 1024px) ============ */
+/* ============================================================
+   RESPONSIVO - TABLET (telas até 1024px)
+   Ajustes leves: grade de 3 colunas, imagem menor, footer mais compacto
+   ============================================================ */
 @media (max-width: 1024px) {
+  /* Passeios em 3 colunas ao invés de 4 */
   .passeios-grid {
     grid-template-columns: repeat(3, 251px);
   }
 
+  /* Reduz espaçamento da seção Sobre Nós */
   .sobre-nos {
     gap: 30px;
     padding: 40px 30px;
   }
 
+  /* Imagem do Sobre Nós menor */
   .sobre-nos-image img {
     width: 320px;
     height: 320px;
   }
 
+  /* Reduz o espaço entre as seções do rodapé */
   .footer-content {
     gap: 60px;
   }
 }
 
-/* ============ RESPONSIVE - MOBILE (max 768px) ============ */
+/* ============================================================
+   RESPONSIVO - MOBILE (telas até 768px)
+   Layout empilhado, menu hambúrguer visível, fontes menores
+   ============================================================ */
 @media (max-width: 768px) {
-  /* HEADER */
+
+  /* --- HEADER --- */
+  /* Reduz o padding do cabeçalho */
   .header {
     padding: 15px 20px;
-    position: relative;
+    position: relative;        /* Necessário para posicionar o menu dropdown */
   }
 
+  /* Logo menor no mobile */
   .header .logo img {
     height: 40px;
   }
 
+  /* Mostra o botão hambúrguer */
   .menu-toggle {
     display: flex;
   }
 
+  /* Menu de navegação escondido por padrão no mobile */
   .header nav {
     display: none;
-    flex-direction: column;
-    position: absolute;
+    flex-direction: column;    /* Links empilhados verticalmente */
+    position: absolute;        /* Dropdown abaixo do header */
     top: 100%;
     left: 0;
     right: 0;
     background: #fff;
     padding: 20px;
     gap: 18px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* Sombra sutil */
     z-index: 1000;
   }
 
+  /* Quando a classe "open" é adicionada pelo JS, o menu aparece */
   .header nav.open {
     display: flex;
   }
 
+  /* Links do menu maiores para facilitar o toque */
   .header nav a {
     font-size: 16px;
   }
 
-  /* BANNER */
+  /* --- BANNER --- */
+  /* Altura menor no mobile */
   .banner {
     height: 300px;
   }
 
+  /* Texto do banner menor e ocupando 90% da largura */
   .banner-overlay h1 {
     font-size: 28px;
     line-height: 34px;
     max-width: 90%;
   }
 
+  /* Botão "Reserve aqui" menor */
   .btn-pink {
     font-size: 18px;
     padding: 8px 28px;
   }
 
-  /* SOBRE NOS */
+  /* --- SOBRE NOS --- */
+  /* Empilha texto e imagem verticalmente */
   .sobre-nos {
     flex-direction: column;
     padding: 40px 20px;
@@ -588,6 +695,7 @@ ul {
     align-items: center;
   }
 
+  /* Fontes menores no mobile */
   .sobre-nos-text h2 {
     font-size: 30px;
   }
@@ -600,47 +708,56 @@ ul {
     font-size: 14px;
   }
 
+  /* Imagem responsiva com largura máxima */
   .sobre-nos-image img {
     width: 100%;
     max-width: 350px;
     height: auto;
   }
 
-  /* PASSEIOS */
+  /* --- PASSEIOS --- */
+  /* Menos padding */
   .passeios {
     padding: 40px 0 60px;
   }
 
+  /* Título menor */
   .passeios h2 {
     font-size: 28px;
     margin-bottom: 30px;
   }
 
+  /* Grade em 2 colunas flexíveis ao invés de 4 fixas */
   .passeios-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 0 20px;
   }
 
+  /* Imagens dos cards ocupam toda a largura disponível */
   .passeio-card img {
     width: 100%;
     height: 140px;
   }
 
+  /* Nomes dos passeios menores */
   .passeio-card h3 {
     font-size: 18px;
   }
 
+  /* Texto dos cards ocupa toda a largura */
   .passeio-card p {
     width: 100%;
     font-size: 13px;
   }
 
-  /* ORCAMENTO */
+  /* --- ORCAMENTO (FORMULARIO) --- */
+  /* Menos padding */
   .orcamento {
     padding: 40px 20px 60px;
   }
 
+  /* Título menor */
   .orcamento h2 {
     font-size: 24px;
   }
@@ -649,20 +766,24 @@ ul {
     font-size: 20px;
   }
 
+  /* Campos do formulário empilhados (um abaixo do outro) */
   .form-row {
     flex-direction: column;
     gap: 16px;
   }
 
+  /* Campos meio-tamanho ocupam largura total no mobile */
   .form-group-half {
     flex: 1;
   }
 
-  /* FOOTER */
+  /* --- FOOTER --- */
+  /* Menos padding lateral */
   .footer {
     padding: 30px 20px 20px;
   }
 
+  /* Seções empilhadas e centralizadas */
   .footer-content {
     flex-direction: column;
     gap: 24px;
@@ -670,23 +791,28 @@ ul {
     text-align: center;
   }
 
+  /* Ícones sociais centralizados */
   .footer-social {
     justify-content: center;
   }
 
+  /* Títulos do rodapé menores */
   .footer-section h4 {
     font-size: 20px;
   }
 
-  /* PAGINA TRANCOSO */
+  /* --- PAGINA DE DETALHE DO PASSEIO --- */
+  /* Menos margem no topo */
   .passeio-hero {
     margin: 15px auto 0;
   }
 
+  /* Imagem hero menor */
   .passeio-hero img {
     height: 220px;
   }
 
+  /* Menos padding */
   .passeio-detail {
     padding: 30px 0 40px;
   }
@@ -695,6 +821,7 @@ ul {
     padding: 0 20px;
   }
 
+  /* Títulos menores na página de detalhe */
   .passeio-detail-content h2,
   .passeio-detail-content .section-title {
     font-size: 28px;
@@ -705,36 +832,46 @@ ul {
   }
 }
 
-/* ============ RESPONSIVE - SMALL MOBILE (max 480px) ============ */
+/* ============================================================
+   RESPONSIVO - CELULAR PEQUENO (telas até 480px)
+   Cards em coluna única, textos ainda menores
+   ============================================================ */
 @media (max-width: 480px) {
+  /* Banner mais baixo */
   .banner {
     height: 240px;
   }
 
+  /* Texto do banner ainda menor */
   .banner-overlay h1 {
     font-size: 22px;
     line-height: 28px;
   }
 
+  /* Botão reserve aqui menor */
   .btn-pink {
     font-size: 16px;
     padding: 6px 22px;
   }
 
+  /* Cards de passeios em coluna única, centralizados */
   .passeios-grid {
     grid-template-columns: 1fr;
     max-width: 300px;
     margin: 0 auto;
   }
 
+  /* Imagens mais altas na coluna única */
   .passeio-card img {
     height: 180px;
   }
 
+  /* Título Sobre Nós menor */
   .sobre-nos-text h2 {
     font-size: 26px;
   }
 
+  /* Título do orçamento menor */
   .orcamento h2 {
     font-size: 20px;
   }

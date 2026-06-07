@@ -1,42 +1,63 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <!-- Define a codificação de caracteres como UTF-8 (suporta acentos e caracteres especiais) -->
   <meta charset="UTF-8">
+  <!-- Configura a viewport para dispositivos móveis (responsividade) -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título da página exibido na aba do navegador -->
   <title>Gessica Turismo - Home</title>
+  <!-- Importa a folha de estilos principal -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- ===================== CABEÇALHO (HEADER) ===================== -->
+  <!-- Contém o logotipo à esquerda e o menu de navegação à direita -->
   <header class="header">
+
+    <!-- Logo clicável que leva para a página inicial -->
     <a href="index.html" class="logo">
       <img src="images/logo.png" alt="Gessica Turismo">
     </a>
+
+    <!-- Botão hambúrguer (visível apenas no mobile via CSS) -->
+    <!-- As 3 <span> representam as 3 barras do ícone -->
     <button class="menu-toggle" aria-label="Abrir menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
+
+    <!-- Menu de navegação principal -->
+    <!-- No mobile, fica escondido e aparece ao clicar no hambúrguer (controlado pelo JS) -->
     <nav>
-      <a href="index.html" class="active">INICIO</a>
-      <a href="#sobre">SOBRE NÓS</a>
-      <a href="#passeios">PASSEIOS</a>
-      <a href="#contato">CONTATO</a>
+      <a href="index.html" class="active">INICIO</a>       <!-- Link ativo (página atual) -->
+      <a href="#sobre">SOBRE NÓS</a>                        <!-- Ancora para a seção Sobre Nós -->
+      <a href="#passeios">PASSEIOS</a>                       <!-- Ancora para a seção Passeios -->
+      <a href="#contato">CONTATO</a>                         <!-- Ancora para o rodapé (contato) -->
     </nav>
   </header>
 
-  <!-- BANNER -->
+  <!-- ===================== BANNER PRINCIPAL ===================== -->
+  <!-- Imagem de fundo com texto sobreposto e botão de reserva -->
   <section class="banner">
+    <!-- Imagem de fundo do banner (praia de Porto Seguro) -->
     <img src="images/banner.jpg" alt="Porto Seguro - Bahia">
+
+    <!-- Camada sobreposta com o título e o botão -->
     <div class="banner-overlay">
       <h1>Curta suas férias no melhor lugar da Bahia</h1>
+      <!-- Botão que leva o usuário até o formulário de orçamento -->
       <a href="#orcamento" class="btn-pink">Reserve aqui</a>
     </div>
   </section>
 
-  <!-- SOBRE NÓS -->
+  <!-- ===================== SEÇÃO SOBRE NÓS ===================== -->
+  <!-- Apresenta a história da empresa com texto à esquerda e imagem à direita -->
   <section class="sobre-nos" id="sobre">
+
+    <!-- Coluna de texto -->
     <div class="sobre-nos-text">
       <h2>SOBRE NÓS</h2>
       <h3>Mergulhe um pouco em<br>nossa história</h3>
@@ -45,16 +66,22 @@
       <p>Lorem ipsum dolor sit amet consectetur. Pellentesque sed quam quam in habitasse elementum aenean. Neque euismod dolor turpis etiam eget. Quis sit morbi in placerat et elit quam ac. Nulla massa cras etiam lectus duis at platea.</p>
       <p>Lorem ipsum dolor sit amet consectetur. Pellentesque sed quam quam in habitasse elementum aenean. Neque euismod dolor turpis etiam eget. Quis sit morbi in placerat et elit quam ac. Nulla massa cras etiam lectus duis at platea.</p>
     </div>
+
+    <!-- Coluna da imagem -->
     <div class="sobre-nos-image">
       <img src="images/about-image.png" alt="Sobre nós">
     </div>
   </section>
 
-  <!-- PASSEIOS -->
+  <!-- ===================== SEÇÃO PASSEIOS ===================== -->
+  <!-- Grade com 12 cards de passeios turísticos, cada um com imagem, título, descrição e botão -->
   <section class="passeios" id="passeios">
     <h2>OS MELHORES PASSEIOS</h2>
+
+    <!-- Grade de cards (4 colunas no desktop, 2 no tablet, 1 no celular) -->
     <div class="passeios-grid">
 
+      <!-- Card 1: Arraial D'ajuda -->
       <div class="passeio-card">
         <img src="images/arraial.jpg" alt="Arraial D'ajuda">
         <h3>Arraial D'ajuda</h3>
@@ -62,6 +89,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 2: Trancoso (leva para a página de detalhe trancoso.html) -->
       <div class="passeio-card">
         <img src="images/trancoso.jpg" alt="Trancoso">
         <h3>Trancoso</h3>
@@ -69,6 +97,7 @@
         <a href="trancoso.html" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 3: Praia do Espelho -->
       <div class="passeio-card">
         <img src="images/praia-espelho.jpg" alt="Praia do Espelho">
         <h3>Praia do Espelho</h3>
@@ -76,6 +105,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 4: Caraíva -->
       <div class="passeio-card">
         <img src="images/caraiva.jpg" alt="Caraíva">
         <h3>Caraíva</h3>
@@ -83,6 +113,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 5: Coroa Vermelha -->
       <div class="passeio-card">
         <img src="images/coroa-vermelha.jpg" alt="Coroa Vermelha">
         <h3>Coroa Vermelha</h3>
@@ -90,6 +121,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 6: By Night Arraial -->
       <div class="passeio-card">
         <img src="images/by-night.jpg" alt="By Night Arraial">
         <h3>By Night Arraial</h3>
@@ -97,6 +129,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 7: Recife de Fora -->
       <div class="passeio-card">
         <img src="images/recife-fora.jpg" alt="Recife de Fora">
         <h3>Recife de Fora</h3>
@@ -104,6 +137,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 8: Coroa Alta/Fluvial -->
       <div class="passeio-card">
         <img src="images/coroa-alta.jpg" alt="Coroa Alta/Fluvial">
         <h3>Coroa Alta/Fluvial</h3>
@@ -111,6 +145,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 9: Mergulho -->
       <div class="passeio-card">
         <img src="images/mergulho.jpg" alt="Mergulho">
         <h3>Mergulho</h3>
@@ -118,6 +153,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 10: Rota das Baleias -->
       <div class="passeio-card">
         <img src="images/rota-baleias.jpg" alt="Rota das Baleias">
         <h3>Rota das Baleias</h3>
@@ -125,6 +161,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 11: Quadricíclo -->
       <div class="passeio-card">
         <img src="images/quadriciclo.jpg" alt="Quadricíclo">
         <h3>Quadricíclo</h3>
@@ -132,6 +169,7 @@
         <a href="#" class="btn-pink-sm">Saiba mais</a>
       </div>
 
+      <!-- Card 12: Eco Parque -->
       <div class="passeio-card">
         <img src="images/eco-parque.jpg" alt="Eco Parque">
         <h3>Eco Parque</h3>
@@ -142,11 +180,14 @@
     </div>
   </section>
 
-  <!-- ORÇAMENTO -->
+  <!-- ===================== SEÇÃO ORÇAMENTO (FORMULÁRIO) ===================== -->
+  <!-- Formulário de contato que envia os dados via WhatsApp (controlado pelo JS) -->
   <section class="orcamento" id="orcamento">
     <h2>FAÇA JÁ SEU ORÇAMENTO</h2>
 
     <form id="orcamento-form">
+
+      <!-- Dados pessoais: Nome e Telefone lado a lado -->
       <h3>Dados pessoais</h3>
       <div class="form-row">
         <div class="form-group">
@@ -159,7 +200,10 @@
         </div>
       </div>
 
+      <!-- Segunda linha: Seleção de passeio (esquerda) e Datas (direita) -->
       <div class="form-row">
+
+        <!-- Coluna esquerda: dropdown de passeios -->
         <div class="form-group">
           <h3>Qual passeio deseja realizar?</h3>
           <select id="passeio-select" name="passeio">
@@ -178,12 +222,17 @@
             <option value="eco-parque">Eco Parque</option>
           </select>
         </div>
+
+        <!-- Coluna direita: campos de datas, adultos e crianças -->
         <div class="form-group">
           <h3>Datas</h3>
+          <!-- Campo de data de ida -->
           <label for="ida">Ida</label>
           <input type="date" id="ida" name="ida">
+          <!-- Campo de data de volta -->
           <label for="volta" style="margin-top: 12px;">Volta</label>
           <input type="date" id="volta" name="volta">
+          <!-- Campos de Adulto e Criança lado a lado -->
           <div class="form-row" style="margin-top: 12px; margin-bottom: 0;">
             <div class="form-group form-group-half">
               <label for="adulto">Adulto</label>
@@ -209,22 +258,29 @@
         </div>
       </div>
 
+      <!-- Campo de observações -->
       <h3>Observações</h3>
       <div class="form-group">
         <textarea id="observacoes" name="observacoes" placeholder="Deixe aqui suas observações"></textarea>
       </div>
 
+      <!-- Botão de envio (envia via WhatsApp pelo JS) -->
       <button type="submit" class="btn-pink-sm">Enviar</button>
     </form>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ===================== RODAPÉ (FOOTER) ===================== -->
+  <!-- Fundo rosa com 3 colunas: Contato, Redes Sociais e Mapa do Site -->
   <footer class="footer" id="contato">
     <div class="footer-content">
+
+      <!-- Coluna 1: Informações de contato -->
       <div class="footer-section">
         <h4>Contato</h4>
         <p>(73) 9 8147-3188 <img src="images/whatsapp.svg" alt="WhatsApp" style="width: 10px; height: 10px; vertical-align: middle; margin-left: 4px;"></p>
       </div>
+
+      <!-- Coluna 2: Links de redes sociais -->
       <div class="footer-section">
         <h4>Siga-nos</h4>
         <div class="footer-social">
@@ -232,6 +288,8 @@
           <a href="#"><img src="images/facebook.svg" alt="Facebook"></a>
         </div>
       </div>
+
+      <!-- Coluna 3: Links internos do site -->
       <div class="footer-section footer-sitemap">
         <h4>Mapa do Site</h4>
         <a href="index.html">Inicio</a>
@@ -240,11 +298,14 @@
         <a href="#contato">Contato</a>
       </div>
     </div>
+
+    <!-- Créditos do desenvolvedor -->
     <div class="footer-bottom">
       Desenvolvido por - Siteindev
     </div>
   </footer>
 
+  <!-- Importa o JavaScript principal (menu hambúrguer, formulário WhatsApp, scroll suave) -->
   <script src="script.js"></script>
 </body>
 </html>
